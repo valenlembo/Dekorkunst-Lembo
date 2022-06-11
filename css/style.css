@@ -5,23 +5,24 @@
 }
 body {
     background-color: #f2f2f2;
-    /* font-family: "Inter", sans-serif; */
+	font-family: 'Charis SIL', serif;
 }
 /* nav */
 .navbar {
-    grid-area: navbar;
-    height: 105px;
+    height: 140px;
     z-index: 5;
 }
 .navbar .logo {
-    margin-left: 50px;
-    width: 150px;
+    width: 300px;
+	height: 160px;
     background-size: cover;
+	display: flex;
+	justify-content: center;
 }
 .navbar .menu {
     position: fixed;
     background-color: rgba(242, 242, 242, 0.768627451);
-    height: 105px;
+    height: 140px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -31,7 +32,7 @@ body {
 .navbar .menu .menuItems {
     list-style: none;
     display: flex;
-    margin-right: 30px;
+    margin-right: 70px;
 }
 .navbar .menu .menuItems li {
     margin: 0 5px;
@@ -39,8 +40,8 @@ body {
 .navbar .menu .menuItems li a {
     text-decoration: none;
     color: gray;
-    padding: 7px 17px;
-    font-size: 18px;
+    padding: 0px 17px;
+    font-size: 20px;
 }
 .navbar .menu .menuItems li a:hover {
     background-color: rgba(167, 163, 163, 0.253);
@@ -170,6 +171,17 @@ ul.show {
 }
 /* responsive */
 @media screen and (max-width: 950px){
+	.navbar .menu {
+		height: 130px;
+		position: relative;
+	}
+	.navbar .logo {
+		width: 250px;
+		height: 120px;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
+	}
 	.navbar .menu .menuItems li a {
 		font-size: 16px;
 		padding: 5px 15px;
@@ -177,8 +189,15 @@ ul.show {
 }
 @media screen and (max-width: 858px){
 	.navbar .menu {
-		height: 95px;
+		height: 110px;
 		position: relative;
+	}
+	.navbar .logo {
+		width: 200px;
+		height: 100px;
+		background-size: cover;
+		display: flex;
+		justify-content: center;
 	}
 	.navbar .menu .btnMenu {
 		display: inline-flex;
@@ -189,7 +208,7 @@ ul.show {
 		position: fixed;
 		width: 100vw;
 		height: calc(100% - 95px);
-		background: #f7bfd8;
+		background: #cd9595;
 		top: -100vh;
 		text-align: center;
 		transition: all 0.4s;

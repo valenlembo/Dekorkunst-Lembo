@@ -10,18 +10,16 @@ body {
 /* nav */
 .navbar {
     height: 140px;
-    z-index: 5;
 }
 .navbar .logo {
-    width: 300px;
-	height: 160px;
+    width: 250px;
+	height: 130px;
+	margin-left: 60px;
     background-size: cover;
 	display: flex;
 	justify-content: center;
 }
 .navbar .menu {
-    position: fixed;
-    background-color: rgba(242, 242, 242, 0.768627451);
     height: 140px;
     width: 100%;
     display: flex;
@@ -32,7 +30,7 @@ body {
 .navbar .menu .menuItems {
     list-style: none;
     display: flex;
-    margin-right: 70px;
+    margin-right: 100px;
 }
 .navbar .menu .menuItems li {
     margin: 0 5px;
@@ -58,7 +56,7 @@ body {
     display: none;
 }
 ul.show {
-    top: 95px;
+    top: 125px;
 }
 /* cards */
 .card-img-filter{
@@ -140,7 +138,6 @@ ul.show {
 	transform: translateY(-50%) translateX(-20px);
 	white-space: nowrap;
 	padding: 6px 10px;
-	color: #000;
 	background: rgba(255, 255, 255, 0.7);
 	font-size: 15px;
 	pointer-events: none;
@@ -169,7 +166,31 @@ ul.show {
 	font-size: 18px;
 	color:#333;
 }
+/* footer */
+footer{
+    background-color: #f2f2f2;
+    font-size: small;
+	border-top: 1px solid grey;
+}
+.nav-link-footer{
+    font-size: 15px;
+}
+.nav-link-footer:hover{
+	font-size: 17px;
+
+}
+.icono{
+    padding-right: 15px;
+}
+.social{
+    font-family: serif;
+}
 /* responsive */
+@media screen and (max-width: 1128px){
+	.navbar .logo{
+		margin: 0;
+	}
+}
 @media screen and (max-width: 950px){
 	.navbar .menu {
 		height: 130px;
@@ -207,8 +228,9 @@ ul.show {
 	.menuItems {
 		position: fixed;
 		width: 100vw;
-		height: calc(100% - 95px);
-		background: #cd9595;
+		height: calc(100% - 125px); 
+		/* #cd9595 color del logo */
+		background: #f2f2f2;
 		top: -100vh;
 		text-align: center;
 		transition: all 0.4s;

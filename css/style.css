@@ -167,23 +167,43 @@ ul.show {
 	color:#333;
 }
 /* footer */
-footer{
-    background-color: #f2f2f2;
-    font-size: small;
+.lineaFooter{
 	border-top: 1px solid grey;
+}
+.logoFooter{
+	width: 280px;
+	height: 170px;
+	background-size: cover;
+}
+.foot-navigation{
+	list-style: none;
 }
 .nav-link-footer{
     font-size: 15px;
+	text-decoration: none;
+	color: #333;
 }
 .nav-link-footer:hover{
 	font-size: 17px;
-
+	color: #333;
+}
+.contacto, .tel, .mail, .icono, .newsletter{
+	color: #333;
 }
 .icono{
-    padding-right: 15px;
+	padding-top: 20px;
+	margin-right: 10px;
 }
-.social{
-    font-family: serif;
+.form-control{
+	width: 250px;
+	margin: auto;
+}
+.form-btn{
+	margin-top: 15px;
+	padding: 3px;
+	border-radius: 5px;
+	background-color: rgb(34, 34, 34);
+	color: #f2f2f2;
 }
 /* responsive */
 @media screen and (max-width: 1128px){

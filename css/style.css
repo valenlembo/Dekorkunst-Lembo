@@ -232,6 +232,7 @@ ul.show {
 	.navbar .menu {
 		height: 110px;
 		position: relative;
+		z-index: 1;
 	}
 	.navbar .logo {
 		width: 200px;

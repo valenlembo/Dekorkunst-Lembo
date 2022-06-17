@@ -42,13 +42,13 @@ function pagar(){
         alert('Usted tiene para elegir:')
         for(let i = 1; i <= 6; i++){
             let interes = monto * (i * 0.05)
-            let cuota = (monto + interes) / i
-            let total = monto + interes
-            alert(`${i} cuotas de: $ ${cuota} \n Total de: $ ${total}`)
+            let cuota = Math.round((monto + interes) / i) 
+            let total = Math.round(monto + interes)
+            alert(`${i} cuota/s de: $ ${cuota} \nTotal de: $ ${total}`)
         }
         let cuotas = parseInt(prompt('¿En cuantas cuotas desea pagar?')) 
         if(cuotas == 1 || cuotas == 2 || cuotas == 3 || cuotas == 4 || cuotas == 5 || cuotas == 6){
-            alert(`Enhorabuena su pago se ha concretado en ${cuotas} cuotas`)
+            alert(`Enhorabuena su pago se ha concretado en ${cuotas} cuota/s`)
         }else{
             alert('Ingrese una opción valida')
             pagar()

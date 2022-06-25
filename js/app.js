@@ -201,43 +201,40 @@ function seguirComprando(){
     if(repregunta == 'si'){
         compra()
     }else if(repregunta == 'no'){
+        alert(`Su carrito: \n ${carrito}`)
         alert('Gracias por su compra')
     }else{
         alert('Ingrese una opción valida')
         seguirComprando()
     }
 }
+// CARRITO
+let carrito = []
 // FUNCION COMPRA
 function compra(){
     let pregunta = prompt('¿Qué te gustaría comprar? \n 1- Deco \n 2- Cuadros \n 3- Velas')
     let eleccion = pregunta.toUpperCase()
-    let carrito = []
     if(eleccion == 1 || eleccion == 'DECO'){
         let opciones = parseFloat(prompt(`Nuestras opciones son: \n 1. ${almohadonesVarios.nombre}: $${almohadonesVarios.precio} \n 2. ${setMesaYBancos.nombre}: $${setMesaYBancos.precio} \n 3. ${setMesaYBanquetas.nombre}: $${setMesaYBanquetas.precio} \n 4. ${setMesaYLampara.nombre}: $${setMesaYLampara.precio} \n 5. ${bauleraAmarilla.nombre}: $${bauleraAmarilla.nombre}`))
         switch(opciones){
             case 1:
-                carrito.push(almohadonesVarios.nombre, almohadonesVarios.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${almohadonesVarios.nombre}: ${almohadonesVarios.precio}\n`)
                 seguirComprando()
                 break
             case 2:
-                carrito.push(setMesaYBancos.nombre, setMesaYBancos.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${setMesaYBancos.nombre}: ${setMesaYBancos.precio}\n`)
                 seguirComprando()
                 break
             case 3:
-                carrito.push(setMesaYBanquetas.nombre, setMesaYBanquetas.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${setMesaYBanquetas.nombre}: ${setMesaYBanquetas.precio}\n`)
                 seguirComprando()
                 break
             case 4:
-                carrito.push(setMesaYLampara.nombre, setMesaYLampara.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${setMesaYLampara.nombre}: ${setMesaYLampara.precio}\n`)
                 seguirComprando()
                 break
             case 5:
-                carrito.push(bauleraAmarilla.nombre, bauleraAmarilla.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${bauleraAmarilla.nombre}: ${bauleraAmarilla.precio}\n`)
                 seguirComprando()
                 break
             default:
@@ -248,13 +245,11 @@ function compra(){
         let opciones = parseInt(prompt(`Nuestras opciones son: \n 1. ${cuadroVerde.nombre}: $${cuadroVerde.precio} \n 2. ${cuadroBlanco.nombre}: $${cuadroBlanco.precio}`))
         switch(opciones){
             case 1:
-                carrito.push(cuadroVerde.nombre, cuadroVerde.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${cuadroVerde.nombre}: ${cuadroVerde.precio}\n`)
                 seguirComprando()
                 break
             case 2:
-                carrito.push(cuadroBlanco.nombre, cuadroBlanco.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${cuadroBlanco.nombre}: ${cuadroBlanco.precio}\n`)
                 seguirComprando()
                 break
             default: 
@@ -265,13 +260,11 @@ function compra(){
         let opciones = parseInt(prompt(`Nuestras opciones son: \n 1. ${tallRibbedTower.nombre}: $${tallRibbedTower.precio} \n 2. ${shortRibbedTower.nombre}: $${shortRibbedTower.precio}`))
         switch(opciones){
             case 1:
-                carrito.push(tallRibbedTower.nombre, tallRibbedTower.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${tallRibbedTower.nombre}: ${tallRibbedTower.precio}\n`)
                 seguirComprando()
                 break
             case 2:
-                carrito.push(shortRibbedTower.nombre, shortRibbedTower.precio)
-                alert(`Su carrito: \n ${carrito}`)
+                carrito.push(`${shortRibbedTower.nombre}: ${shortRibbedTower.precio}\n`)
                 seguirComprando()
                 break
             default: 

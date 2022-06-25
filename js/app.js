@@ -198,9 +198,10 @@ saludar()
 // FUNCION SEGUIR COMPRANDO
 function seguirComprando(){
     let repregunta = prompt('¿Desea comprar algo mas? (si/no)')
-    if(repregunta == 'si'){
+    let eleccion = repregunta.toUpperCase()
+    if(eleccion == 'SI'){
         compra()
-    }else if(repregunta == 'no'){
+    }else if(eleccion == 'NO'){
         alert(`Su carrito: \n ${carrito}`)
         alert('Gracias por su compra')
     }else{

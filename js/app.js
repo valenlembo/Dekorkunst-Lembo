@@ -186,6 +186,18 @@ const cuadroBlanco = new Producto ("Cuadro Blanco", 8000, 7)
 // OBJETOS VELAS
 const tallRibbedTower = new Producto ("Tall Ribbed Tower", 700, 20)
 const shortRibbedTower = new Producto ("Short Ribbed Tower", 1000, 3)
+// TODOS LOS PRODUCTOS 
+const productos = [
+    almohadonesVarios,
+    setMesaYBancos,
+    setMesaYBanquetas,
+    setMesaYLampara,
+    bauleraAmarilla,
+    cuadroVerde,
+    cuadroBlanco,
+    tallRibbedTower,
+    shortRibbedTower
+]
 // FUNCION SALUDAR
 function saludar(){
     let nombre = prompt('¿Cómo es tu nombre?')
@@ -199,53 +211,76 @@ function seguirComprando(){
     if(eleccion == 'SI'){
         compra()
     }else if(eleccion == 'NO'){
-        JSON.stringify(carrito)
-        // pagar()
+        alert(`Su carrito: \n ${JSON.stringify(carrito)}`)
+        pagar()
+        const total = totalCarrito()
         alert('Gracias por su compra')
     }else{
         alert('Ingrese una opción valida')
         seguirComprando()
     }
 }
+// FUNCION ACOMODAR PRECIOS 
+function acomodar(){
+    let preguntaAcomodar = prompt("Como desea acomodar los productos: \n 1.Del mas economico al mas costoso \n 2. Del mas costoso al mas economico")
+    switch(preguntaAcomodar){
+        case "1": 
+            productos.sort((a, b) => {
+                if (a.precio > b.precio) {
+                    return 1;
+                }
+                if (a.precio < b.precio) {
+                    return -1;
+                }
+                return 0;
+            })
+            alert(JSON.stringify(productos))
+            break
+        case "2":
+            productos.sort((a, b) => {
+                if (b.precio > a.precio) {
+                    return 1;
+                }
+                if (b.precio < a.precio) {
+                    return -1;
+                }
+                return 0;
+            })            
+            alert(JSON.stringify(productos))
+            break
+        default:
+            alert("Seleccione una opcion valida")
+            acomodar()
+    }
+}
+acomodar()
 // FUNCION PAGAR
-// function pagar(){
-//         let pago = prompt('¿Con qué desea pagar? (transferencia/tarjeta)')
-//         if(pago == 'transferencia' || pago == 'Transferencia' || pago == 'TRANSFERENCIA'){
-//             alert('Usted tiene un 10% de descuento')
-//             const precioConTransferencia = carrito.map((el) => 
-//             {
-//                 let descuento = el.precio * 0.10
-//                 let precioFinal = el.precio - descuento
-//                     return {
-//                         precio: precioFinal
-//                     }
-//             }            
-//             )
-//             alert(precioConTransferencia)
-//         }else if(pago == 'tarjeta' || pago == 'Tarjeta' || pago == 'TARJETA'){
-//             alert('Usted tiene un 25% de recargo')
-//             const precioConTarjeta = carrito.map((el) => 
-//             {
-//                 let aumento = el.precio * 0.25
-//                 let precioFinal = el.precio - aumento
-//                     return {
-//                         precio: precioFinal
-//                     }
-//             }  
-//             )
-//             alert(precioConTarjeta)
-//     }
-// }
+function pagar(){
+    let pago = prompt('¿Con qué desea pagar? (transferencia/tarjeta)').toUpperCase()
+    if(pago == 'TRANSFERENCIA'){
+        alert('Usted tiene un 10% de descuento')
+        const total = totalCarrito()
+        const precioConTransferencia = Math.round(total - (total*0.10))
+        alert(`Su total es de: $${precioConTransferencia}`)
+    }else if(pago == 'TARJETA'){
+        alert('Usted tiene un 25% de recargo')
+        const total = totalCarrito()
+        const precioConTarjeta = Math.round(total + (total*0.25))
+        alert(`Su total es de: $${precioConTarjeta}`)
+    }
+}
 // CARRITO
 const carrito = []
-// TOTAL CARRITO
-const total = carrito.reduce((acc, el) => acc + el.precio, 0)
+//FUNCION TOTAL CARRITO
+function totalCarrito(){
+    return carrito.reduce((acc, el) => acc + el.precio, 0)
+}
 // FUNCION COMPRA
 function compra(){
     let pregunta = prompt('¿Qué te gustaría comprar? \n 1- Deco \n 2- Cuadros \n 3- Velas')
     let eleccion = pregunta.toUpperCase()
     if(eleccion == 1 || eleccion == 'DECO'){
-        let opciones = parseFloat(prompt(`Nuestras opciones son: \n 1. ${almohadonesVarios.nombre}: $${almohadonesVarios.precio} \n 2. ${setMesaYBancos.nombre}: $${setMesaYBancos.precio} \n 3. ${setMesaYBanquetas.nombre}: $${setMesaYBanquetas.precio} \n 4. ${setMesaYLampara.nombre}: $${setMesaYLampara.precio} \n 5. ${bauleraAmarilla.nombre}: $${bauleraAmarilla.nombre}`))
+        let opciones = parseFloat(prompt(`Nuestras opciones son: \n 1. ${almohadonesVarios.nombre}: $${almohadonesVarios.precio} \n 2. ${setMesaYBancos.nombre}: $${setMesaYBancos.precio} \n 3. ${setMesaYBanquetas.nombre}: $${setMesaYBanquetas.precio} \n 4. ${setMesaYLampara.nombre}: $${setMesaYLampara.precio} \n 5. ${bauleraAmarilla.nombre}: $${bauleraAmarilla.precio}`))
         switch(opciones){
             case 1:
                 carrito.push({nombre: almohadonesVarios.nombre, precio: almohadonesVarios.precio})

@@ -167,9 +167,6 @@ addEventListener('DOMContentLoaded',()=>{
 // }
 // preguntar()
 
-
-//DESAFIO COMPLEMENTARIO
-
 // OBJETO
 class Producto{
     constructor(nombre, precio){
@@ -189,7 +186,7 @@ const cuadroBlanco = new Producto ("Cuadro Blanco", 8000, 7)
 // OBJETOS VELAS
 const tallRibbedTower = new Producto ("Tall Ribbed Tower", 700, 20)
 const shortRibbedTower = new Producto ("Short Ribbed Tower", 1000, 3)
-// SALUDO
+// FUNCION SALUDAR
 function saludar(){
     let nombre = prompt('¿Cómo es tu nombre?')
     alert(`Hola ${nombre}`)
@@ -202,15 +199,47 @@ function seguirComprando(){
     if(eleccion == 'SI'){
         compra()
     }else if(eleccion == 'NO'){
-        alert(`Su carrito: \n ${carrito}`)
+        JSON.stringify(carrito)
+        // pagar()
         alert('Gracias por su compra')
     }else{
         alert('Ingrese una opción valida')
         seguirComprando()
     }
 }
+// FUNCION PAGAR
+// function pagar(){
+//         let pago = prompt('¿Con qué desea pagar? (transferencia/tarjeta)')
+//         if(pago == 'transferencia' || pago == 'Transferencia' || pago == 'TRANSFERENCIA'){
+//             alert('Usted tiene un 10% de descuento')
+//             const precioConTransferencia = carrito.map((el) => 
+//             {
+//                 let descuento = el.precio * 0.10
+//                 let precioFinal = el.precio - descuento
+//                     return {
+//                         precio: precioFinal
+//                     }
+//             }            
+//             )
+//             alert(precioConTransferencia)
+//         }else if(pago == 'tarjeta' || pago == 'Tarjeta' || pago == 'TARJETA'){
+//             alert('Usted tiene un 25% de recargo')
+//             const precioConTarjeta = carrito.map((el) => 
+//             {
+//                 let aumento = el.precio * 0.25
+//                 let precioFinal = el.precio - aumento
+//                     return {
+//                         precio: precioFinal
+//                     }
+//             }  
+//             )
+//             alert(precioConTarjeta)
+//     }
+// }
 // CARRITO
-let carrito = []
+const carrito = []
+// TOTAL CARRITO
+const total = carrito.reduce((acc, el) => acc + el.precio, 0)
 // FUNCION COMPRA
 function compra(){
     let pregunta = prompt('¿Qué te gustaría comprar? \n 1- Deco \n 2- Cuadros \n 3- Velas')
@@ -219,23 +248,23 @@ function compra(){
         let opciones = parseFloat(prompt(`Nuestras opciones son: \n 1. ${almohadonesVarios.nombre}: $${almohadonesVarios.precio} \n 2. ${setMesaYBancos.nombre}: $${setMesaYBancos.precio} \n 3. ${setMesaYBanquetas.nombre}: $${setMesaYBanquetas.precio} \n 4. ${setMesaYLampara.nombre}: $${setMesaYLampara.precio} \n 5. ${bauleraAmarilla.nombre}: $${bauleraAmarilla.nombre}`))
         switch(opciones){
             case 1:
-                carrito.push(`${almohadonesVarios.nombre}: ${almohadonesVarios.precio}\n`)
+                carrito.push({nombre: almohadonesVarios.nombre, precio: almohadonesVarios.precio})
                 seguirComprando()
                 break
             case 2:
-                carrito.push(`${setMesaYBancos.nombre}: ${setMesaYBancos.precio}\n`)
+                carrito.push({nombre: setMesaYBancos.nombre, precio: setMesaYBancos.precio})
                 seguirComprando()
                 break
             case 3:
-                carrito.push(`${setMesaYBanquetas.nombre}: ${setMesaYBanquetas.precio}\n`)
+                carrito.push({nombre: setMesaYBanquetas.nombre, precio: setMesaYBanquetas.precio})
                 seguirComprando()
                 break
             case 4:
-                carrito.push(`${setMesaYLampara.nombre}: ${setMesaYLampara.precio}\n`)
+                carrito.push({nombre: setMesaYLampara.nombre, precio: setMesaYLampara.precio})
                 seguirComprando()
                 break
             case 5:
-                carrito.push(`${bauleraAmarilla.nombre}: ${bauleraAmarilla.precio}\n`)
+                carrito.push({nombre: bauleraAmarilla.nombre, precio: bauleraAmarilla.precio})
                 seguirComprando()
                 break
             default:
@@ -246,11 +275,11 @@ function compra(){
         let opciones = parseInt(prompt(`Nuestras opciones son: \n 1. ${cuadroVerde.nombre}: $${cuadroVerde.precio} \n 2. ${cuadroBlanco.nombre}: $${cuadroBlanco.precio}`))
         switch(opciones){
             case 1:
-                carrito.push(`${cuadroVerde.nombre}: ${cuadroVerde.precio}\n`)
+                carrito.push({nombre: cuadroVerde.nombre, precio: cuadroVerde.precio})
                 seguirComprando()
                 break
             case 2:
-                carrito.push(`${cuadroBlanco.nombre}: ${cuadroBlanco.precio}\n`)
+                carrito.push({nombre: cuadroBlanco.nombre, precio: cuadroBlanco.precio})
                 seguirComprando()
                 break
             default: 
@@ -261,11 +290,11 @@ function compra(){
         let opciones = parseInt(prompt(`Nuestras opciones son: \n 1. ${tallRibbedTower.nombre}: $${tallRibbedTower.precio} \n 2. ${shortRibbedTower.nombre}: $${shortRibbedTower.precio}`))
         switch(opciones){
             case 1:
-                carrito.push(`${tallRibbedTower.nombre}: ${tallRibbedTower.precio}\n`)
+                carrito.push({nombre: tallRibbedTower.nombre, precio: tallRibbedTower.precio})
                 seguirComprando()
                 break
             case 2:
-                carrito.push(`${shortRibbedTower.nombre}: ${shortRibbedTower.precio}\n`)
+                carrito.push({nombre: shortRibbedTower.nombre, precio: shortRibbedTower.precio})
                 seguirComprando()
                 break
             default: 

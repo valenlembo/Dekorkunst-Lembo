@@ -18,22 +18,29 @@
     <title>Dekorkunst</title>
 </head>
 <body>
-    <div class="navbar">
-        <nav class="menu">
-            <div>
-                <a href="index.html"><img class="logo" src="img/logo2.png" alt="logo"/></a>
-            </div>
-            <ul class="menuItems">
-                <li><a href="index.html"> Home </a></li>
-                <li><a href="./pages/deco.html"> Deco </a></li>
-                <li><a href="./pages/cuadros.html"> Cuadros </a></li>
-                <li><a href="./pages/velas.html"> Velas </a></li>
-                <!-- <li><a href="./pages/contacto.html"> Contacto </a></li> -->
-            </ul>
-            <span class="btnMenu">
-                <i class="fa-solid fa-bars"></i>
-            </span>
-        </nav>
+    <nav class="menu">
+        <div>
+            <a href="index.html"><img class="logo" src="img/logo2.png" alt="logo"/></a>
+        </div>
+        <ul class="menuItems">
+            <li><a href="index.html"> Home </a></li>
+            <li><a href="./pages/deco.html"> Deco </a></li>
+            <li><a href="./pages/cuadros.html"> Cuadros </a></li>
+            <li><a href="./pages/velas.html"> Velas </a></li>
+            <!-- <li><a href="./pages/contacto.html"> Contacto </a></li> -->
+        </ul>
+        <div class="btnCarrito">
+            <label for="btnCarrito"> <i class="fa fa-cart-plus"></i> </label>
+        </div>
+        <span class="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </span>
+    </nav>
+    <input type="checkbox" id="btnCarrito">
+    <div class="containerCarrito">
+        <div class="contCarrito">
+            <p>producto1</p>
+        </div>
     </div>
     <main>
         <!-- cards -->
@@ -73,279 +80,279 @@
         <section class="container">
             <h2 class="text-center mt-5 titulo">BEST SELLERS</h2>
             <div class="linea"></div>
-            <div class="card_contenedor mt-5 mb-5">
+            <div class="cardContenedor mt-5 mb-5">
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/almohadones.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Almohadones Varios</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$5.600</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/cuadros2.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Set Cuadros</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$3.500</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/pieDeCama2.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Pie De Cama</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$4.490</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/velas12.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Short Ribbed Tower</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$1.000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/cuadro3.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Cuadro</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$6.000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/velas13.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
-                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                            <li class="actionBox">
+                                <i class="fa fa-cart-plus agregarCarrito" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Mixed Set</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$6.550</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/cuadros4.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Mesa de Madera</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$18.000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/cuadros12.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Set Cuadros Varios</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$15.500</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/velas19.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Geo Lady</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$1.500</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/alfombra2.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Alfombra</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$18.000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/bauleraAmarilla.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Baulera Amarilla</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$15.550</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card__imgBx">
+                    <div class="cardImgBx">
                         <img src="./img/cuadros11.jpeg" alt="">
                         <ul class="action">
-                            <li class="action__box">
+                            <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="action__box">
+                            <li class="actionBox agregarCarrito">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
                     </div>
-                    <div class="card__contenido">
-                        <div class="contenido__nombreProducto text-center">
+                    <div class="cardContenido">
+                        <div class="nombreProducto text-center">
                             <h4>Set Cuadros Varios</h4>
                         </div>
-                        <div class="contenido__precioProducto text-center">
+                        <div class="precioProducto text-center">
                             <h3>$12.500</h3>
                         </div>
                     </div>

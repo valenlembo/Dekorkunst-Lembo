@@ -64,10 +64,18 @@ body {
 }
 .contCarrito{
 	width: 100%;
-	max-width: 400px;
-	background:#a2a1a1;
+	max-width: 350px;
+	background: #f2f2f2;
 	height: 100vh;
 	position: relative;
+	float: right;
+}
+.fotoCarrito{
+	width: 120px;
+	height: 120px;
+	background-size: cover;
+	border-radius: 5px;
+	margin: 15px 15px;
 }
 .btnMenu {
     margin-right: 30px;

@@ -1,197 +1,58 @@
-// VARIABLES
-const btnMenu = document.querySelector('.btnMenu')
-const agregarCarrito = document.querySelector('.agregarCarrito')
-// MENU
+// vars globales
+// aca adentro es donde voy a poner el innerHTML para que se agreguen los productos en e tbody
+const listaProductos = document.querySelector("#listaCarrito tbody")
+// algunos productos
+const almohadonesAgregar = document.getElementById("1")
+const setCuadrosAgregar = document.getElementById("2")
+
+// funciones agregar productos al carrito
+almohadonesAgregar.onclick = () => {
+  const row = document.createElement("tr")
+  row.innerHTML = 
+    `<td><img src="${almohadonesVarios.foto}" class="fotoCarrito"></td>
+      <td>${almohadonesVarios.nombre} <br> $${almohadonesVarios.precio}</td>`
+  listaProductos.appendChild(row)
+}
+setCuadrosAgregar.onclick = () => {
+  const row = document.createElement("tr")
+  row.innerHTML = 
+    `<td><img src="${setCuadros.foto}" class="fotoCarrito"></td>
+      <td>${setCuadros.nombre} <br> $${setCuadros.precio}</td>`
+  listaProductos.appendChild(row)
+}
+
+// obj constructor productos
+class Producto{
+  constructor(nombre, precio, foto, categoria, id){
+      this.nombre = nombre
+      this.precio = precio
+      this.foto = foto
+      this.categoria = categoria
+      this.id = id
+  }
+}
+
+// productos best sellers
+const almohadonesVarios = new Producto ("Almohadones Varios", 5600, "./img/almohadones.jpeg", "deco", 1)
+const setCuadros = new Producto ("Set Cuadros", 3500, "./img/cuadros2.jpeg", "cuadros", 2)
+const pieDeCamaRojo = new Producto ("Pie de Cama", 4490, "./img/pieDeCama2.jpeg", "deco", 3)
+const shortRibbedTower = new Producto ("Short Ribbed Tower", 1000, "./img/velas12.jpeg", "velas", 4)
+const cuadroBlancoyVerde = new Producto ("Cuadro Blanco y Verde", 6000, "./img/cuadro3.jpeg", "cuadros", 5)
+const mixedSet = new Producto ("Mixed set", 6550, "./img/velas13.jpeg", "velas", 6)
+const MesaMadera = new Producto ("Mesa Madera", 18000, "./img/cuadros4.jpeg", "deco", 7)
+const setCuadrosVarios = new Producto ("Set Cuadros Varios", 15500, "./img/cuadros12.jpeg", "cuadros", 8)
+const geoLady = new Producto ("Geo Lady", 1500, "./img/velas19.jpeg", "velas", 9)
+const alfombra = new Producto ("Alfombra", 18000, "./img/alfombra2.jpeg", "deco", 10)
+const bauleraAmarilla = new Producto ("Baulera Amarilla", 15550, "./img/bauleraAmarilla.jpeg", "deco", 11)
+const setCuadrosVariosLuna = new Producto ("Set Cuadros Varios Luna", 12500, "./img/cuadros11.jpeg", "cuadros", 12)
+
+// menu
 addEventListener('DOMContentLoaded',()=>{
-    if(btnMenu){
-        btnMenu.addEventListener('click',()=>{
-            const menuItems = document.querySelector('.menuItems')
-            menuItems.classList.toggle('show')
-        })
-    }
+  const btnMenu = document.querySelector('.btnMenu')
+  if(btnMenu){
+      btnMenu.addEventListener('click',()=>{
+          const menuItems = document.querySelector('.menuItems')
+          menuItems.classList.toggle('show')
+      })
+  }
 })
-
-
-// // VARIABLES GLOBALES
-// // CARRITO
-// const carrito = []
-// // FUNCION INICIALIZAR ELEMENTOS
-// function inicializarElementos(){
-
-// }
-// // CONSTRUCTOR
-// class Producto{
-//     constructor(nombre, precio, categoria, ID){
-//         this.nombre = nombre
-//         this.precio = precio
-//         this.categoria = categoria
-//         this.ID = ID
-//     }
-// }
-// // OBJETOS DECO
-// const almohadonesVarios = new Producto ("Almohadones Varios", 5600, 20, "deco", 1)
-// const setMesaYBancos = new Producto ("Set Mesa y Bancos", 78999, 3, "deco", 2)
-// const setMesaYBanquetas = new Producto ("Set Mesa y Banquetas", 25000, 3, "deco", 3)
-// const setMesaYLampara = new Producto ("Set Mesa y Lampara", 35500, 4, "deco", 4)
-// const bauleraAmarilla = new Producto ("Baulera Amarilla", 15550, 6, "deco", 5)
-// // OBJETOS CUADROS
-// const cuadroVerde = new Producto ("Cuadro Verde", 5600, 15, "cuadros", 6)
-// const cuadroBlanco = new Producto ("Cuadro Blanco", 8000, 7, "cuadros", 7)
-// // OBJETOS VELAS
-// const tallRibbedTower = new Producto ("Tall Ribbed Tower", 700, 20, "velas", 8)
-// const shortRibbedTower = new Producto ("Short Ribbed Tower", 1000, 3, "velas", 9)
-// // TODOS LOS PRODUCTOS 
-// const productos = [
-//     almohadonesVarios,
-//     setMesaYBancos,
-//     setMesaYBanquetas,
-//     setMesaYLampara,
-//     bauleraAmarilla,
-//     cuadroVerde,
-//     cuadroBlanco,
-//     tallRibbedTower,
-//     shortRibbedTower
-// ]
-// // FUNCION SALUDAR
-// function saludar(){
-//     let nombre = prompt('¿Cómo es tu nombre?')
-//     alert(`Hola ${nombre}`)
-// }
-// saludar()
-// // FUNCION SEGUIR COMPRANDO
-// function seguirComprando(){
-//     let repregunta = prompt('¿Desea comprar algo mas? (si/no)')
-//     let eleccion = repregunta.toUpperCase()
-//     if(eleccion == 'SI'){
-//         compra()
-//     }else if(eleccion == 'NO'){
-//         alert(`Su carrito: \n ${JSON.stringify(carrito)}`)
-//         pagar()
-//         const total = totalCarrito()
-//         alert('Gracias por su compra')
-//     }else{
-//         alert('Ingrese una opción valida')
-//         seguirComprando()
-//     }
-// }
-// // FUNCION ACOMODAR PRECIOS 
-// function acomodar(){
-//     let preguntaAcomodar = prompt("Como desea acomodar los productos: \n 1.Del mas economico al mas costoso \n 2. Del mas costoso al mas economico")
-//     switch(preguntaAcomodar){
-//         case "1": 
-//             productos.sort((a, b) => {
-//                 if (a.precio > b.precio) {
-//                     return 1;
-//                 }
-//                 if (a.precio < b.precio) {
-//                     return -1;
-//                 }
-//                 return 0;
-//             })
-//             alert(JSON.stringify(productos))
-//             break
-//         case "2":
-//             productos.sort((a, b) => {
-//                 if (b.precio > a.precio) {
-//                     return 1;
-//                 }
-//                 if (b.precio < a.precio) {
-//                     return -1;
-//                 }
-//                 return 0;
-//             })            
-//             alert(JSON.stringify(productos))
-//             break
-//         default:
-//             alert("Seleccione una opcion valida")
-//             acomodar()
-//     }
-// }
-// acomodar()
-// // FUNCION PAGAR
-// function pagar(){
-//     let pago = prompt('¿Con qué desea pagar? (transferencia/tarjeta)').toUpperCase()
-//     if(pago == 'TRANSFERENCIA'){
-//         alert('Usted tiene un 10% de descuento')
-//         const total = totalCarrito()
-//         const precioConTransferencia = Math.round(total - (total*0.10))
-//         alert(`Su total es de: $${precioConTransferencia}`)
-//     }else if(pago == 'TARJETA'){
-//         alert('Usted tiene un 25% de recargo')
-//         const total = totalCarrito()
-//         const precioConTarjeta = Math.round(total + (total*0.25))
-//         alert(`Su total es de: $${precioConTarjeta}`)
-//     }
-// }
-// //FUNCION TOTAL CARRITO
-// function totalCarrito(){
-//     return carrito.reduce((acc, el) => acc + el.precio, 0)
-// }
-// // FUNCION COMPRA
-// function compra(){
-//     let pregunta = prompt('¿Qué te gustaría comprar? \n 1- Deco \n 2- Cuadros \n 3- Velas')
-//     let eleccion = pregunta.toUpperCase()
-//     if(eleccion == 1 || eleccion == 'DECO'){
-//         let opciones = parseFloat(prompt(`Nuestras opciones son: \n 1. ${almohadonesVarios.nombre}: $${almohadonesVarios.precio} \n 2. ${setMesaYBancos.nombre}: $${setMesaYBancos.precio} \n 3. ${setMesaYBanquetas.nombre}: $${setMesaYBanquetas.precio} \n 4. ${setMesaYLampara.nombre}: $${setMesaYLampara.precio} \n 5. ${bauleraAmarilla.nombre}: $${bauleraAmarilla.precio}`))
-//         switch(opciones){
-//             case 1:
-//                 carrito.push({nombre: almohadonesVarios.nombre, precio: almohadonesVarios.precio})
-//                 seguirComprando()
-//                 break
-//             case 2:
-//                 carrito.push({nombre: setMesaYBancos.nombre, precio: setMesaYBancos.precio})
-//                 seguirComprando()
-//                 break
-//             case 3:
-//                 carrito.push({nombre: setMesaYBanquetas.nombre, precio: setMesaYBanquetas.precio})
-//                 seguirComprando()
-//                 break
-//             case 4:
-//                 carrito.push({nombre: setMesaYLampara.nombre, precio: setMesaYLampara.precio})
-//                 seguirComprando()
-//                 break
-//             case 5:
-//                 carrito.push({nombre: bauleraAmarilla.nombre, precio: bauleraAmarilla.precio})
-//                 seguirComprando()
-//                 break
-//             default:
-//                 alert("Opcion no valida")
-//                 compra()
-//         }
-//     }else if(eleccion == 2 || eleccion == 'CUADROS'){
-//         let opciones = parseInt(prompt(`Nuestras opciones son: \n 1. ${cuadroVerde.nombre}: $${cuadroVerde.precio} \n 2. ${cuadroBlanco.nombre}: $${cuadroBlanco.precio}`))
-//         switch(opciones){
-//             case 1:
-//                 carrito.push({nombre: cuadroVerde.nombre, precio: cuadroVerde.precio})
-//                 seguirComprando()
-//                 break
-//             case 2:
-//                 carrito.push({nombre: cuadroBlanco.nombre, precio: cuadroBlanco.precio})
-//                 seguirComprando()
-//                 break
-//             default: 
-//                 alert("Opcion no valida")
-//                 compra()
-//         }
-//     }else if(eleccion == 3 || eleccion == 'VELAS'){
-//         let opciones = parseInt(prompt(`Nuestras opciones son: \n 1. ${tallRibbedTower.nombre}: $${tallRibbedTower.precio} \n 2. ${shortRibbedTower.nombre}: $${shortRibbedTower.precio}`))
-//         switch(opciones){
-//             case 1:
-//                 carrito.push({nombre: tallRibbedTower.nombre, precio: tallRibbedTower.precio})
-//                 seguirComprando()
-//                 break
-//             case 2:
-//                 carrito.push({nombre: shortRibbedTower.nombre, precio: shortRibbedTower.precio})
-//                 seguirComprando()
-//                 break
-//             default: 
-//                 alert("Opcion no valida")
-//                 compra()
-//         }
-//     }else{
-//             alert('Ingrese un valor válido')
-//             compra()
-//     }
-// }
-// compra()
-

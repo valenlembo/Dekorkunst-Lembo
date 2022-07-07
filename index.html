@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <!-- font awsome -->
     <script src="https://kit.fontawesome.com/c91c0a21e3.js" crossorigin="anonymous"></script>
     <!-- google fonts -->
@@ -39,7 +38,11 @@
     <input type="checkbox" id="btnCarrito">
     <div class="containerCarrito">
         <div class="contCarrito">
-            <p>producto1</p>
+            <table id="listaCarrito" class="u-full-width">
+                <tbody>
+                    <!-- aca se van a ir sumando los productos de mi carrito con el innerHTML -->
+                </tbody>
+            </table>
         </div>
     </div>
     <main>
@@ -80,7 +83,7 @@
         <section class="container">
             <h2 class="text-center mt-5 titulo">BEST SELLERS</h2>
             <div class="linea"></div>
-            <div class="cardContenedor mt-5 mb-5">
+            <div class="cardContenedor mt-5 mb-5" id="listaProductos">
                 <div class="card">
                     <div class="cardImgBx">
                         <img src="./img/almohadones.jpeg" alt="">
@@ -89,7 +92,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="1">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -112,7 +115,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="2">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -135,7 +138,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="3">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -158,7 +161,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="4">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -181,7 +184,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="5">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -204,8 +207,8 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox">
-                                <i class="fa fa-cart-plus agregarCarrito" aria-hidden="true"></i>
+                            <li class="actionBox" id="liveToastBtn" id="6">
+                                <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
                         </ul>
@@ -227,7 +230,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="7">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -250,7 +253,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="8">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -273,7 +276,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="9">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -296,7 +299,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="10">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -319,7 +322,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="11">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>
@@ -342,7 +345,7 @@
                                 <i class="fa fa-heart" aria-hidden="true"></i>
                                 <span>Lista de Deseos</span>
                             </li>
-                            <li class="actionBox agregarCarrito">
+                            <li class="actionBox" id="liveToastBtn" id="12">
                                 <i class="fa fa-cart-plus" aria-hidden="true"></i>
                                 <span>Carrito de Compras</span>
                             </li>

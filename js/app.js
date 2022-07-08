@@ -1,3 +1,8 @@
+// variables globales
+let total = document.getElementById("total")
+const listaProductos = document.querySelector("#listaCarrito tbody")
+let botones = document.querySelectorAll(".btnAgregarCarrito")
+
 // clases 
 class Producto{
   constructor(nombre, precio, foto, categoria, id){
@@ -15,13 +20,13 @@ class Carrito {
       this.productos = []
   }
 
-  // calcularTotal() {
-  //     let total = 0;
-  //     for(let i = 0; i < this.productos.length; i++) {
-  //         total = total + this.productos[i].precio
-  //     }
-  //     return total
-  // }
+  calcularTotal() {
+      let total = 0;
+      for(let i = 0; i < this.productos.length; i++) {
+          total = total + this.productos[i].precio
+      }
+      return total
+  }
 }
 
 // catalogo de productos 
@@ -51,20 +56,32 @@ catalogo.push(producto10)
 catalogo.push(producto11)
 catalogo.push(producto12)
 
+// funciones
+
+function limpiarCarrito() {
+  listaProductos.innerHTML = "";
+}
+
+function actualizarCarrito(carrito) {
+  carrito.productos.forEach(producto => {
+    const row = document.createElement("tr")
+    row.innerHTML = 
+      `<td><img src="${producto.foto}" class="fotoCarrito"></td>
+        <td>${producto.nombre} <br> $${producto.precio}</td>`
+    listaProductos.appendChild(row)
+  })
+  listaProductos.innerHTML += `<p  class="total">Precio Total: $ ${carrito.calcularTotal()}</p>`
+}
+
 // Ingresar un prod al carrito 
-const listaProductos = document.querySelector("#listaCarrito tbody")
 let carrito = new Carrito(1);
-let botones = document.querySelectorAll(".btnAgregarCarrito")
 let arrayDeBotones = Array.from(botones)
 arrayDeBotones.forEach(boton => {
   boton.addEventListener("click", (e) => {
     let productoElegido = catalogo.find(producto => producto.id == e.target.id)
     carrito.productos.push(productoElegido)
-    const row = document.createElement("tr")
-    row.innerHTML = 
-      `<td><img src="${productoElegido.foto}" class="fotoCarrito"></td>
-        <td>${productoElegido.nombre} <br> $${productoElegido.precio}</td>`
-    listaProductos.appendChild(row)
+    limpiarCarrito()
+    actualizarCarrito(carrito)
   })
 })
 

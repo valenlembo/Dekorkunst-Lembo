@@ -1,7 +1,9 @@
 // variables globales
-let total = document.getElementById("total")
 const listaProductos = document.querySelector("#listaCarrito tbody")
-let botones = document.querySelectorAll(".btnAgregarCarrito")
+const botones = document.querySelectorAll(".btnAgregarCarrito")
+const eliminarProducto = document.querySelectorAll(".btnEliminar")
+const vaciarCarrito = document.getElementById("vaciarCarrito")
+const total = document.getElementById("total")
 
 // clases 
 class Producto{
@@ -16,10 +18,9 @@ class Producto{
 
 class Carrito {
   constructor(id) {
-      this.id = id;
+      this.id = id
       this.productos = []
   }
-
   calcularTotal() {
       let total = 0;
       for(let i = 0; i < this.productos.length; i++) {
@@ -58,19 +59,43 @@ catalogo.push(producto12)
 
 // funciones
 
-function limpiarCarrito() {
-  listaProductos.innerHTML = "";
-}
-
+// agregar card al carrito
 function actualizarCarrito(carrito) {
   carrito.productos.forEach(producto => {
     const row = document.createElement("tr")
     row.innerHTML = 
       `<td><img src="${producto.foto}" class="fotoCarrito"></td>
-        <td>${producto.nombre} <br> $${producto.precio}</td>`
+        <td>${producto.nombre} <br> $${producto.precio}</td>
+        <td>
+        <button class="btn btn-dark btn-sm p-2 btnEliminar"> Eliminar </button>
+        </td>`
     listaProductos.appendChild(row)
   })
-  listaProductos.innerHTML += `<p  class="total">Precio Total: $ ${carrito.calcularTotal()}</p>`
+  listaProductos.innerHTML += `<p class="total">Precio Total: $${carrito.calcularTotal()}</p>`
+}
+
+function renovarStorage() {
+  localStorage.removeItem("carrito"); 
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+/* Cargar carrito existente */
+window.addEventListener('DOMContentLoaded', (e) => {
+  let storage = JSON.parse(localStorage.getItem("carrito"));
+  let carritoGuardado = new Carrito(storage.id, storage.productos);
+  storage.productos.forEach(producto => {
+      carritoGuardado.productos.push(producto);
+  })
+  limpiarCarrito();
+  actualizarCarrito(carritoGuardado);
+});
+
+
+// limpiar carrito
+vaciarCarrito.onclick = limpiarCarrito
+function limpiarCarrito() {
+  listaProductos.innerHTML = ""
+  localStorage.clear()
 }
 
 // Ingresar un prod al carrito 
@@ -82,6 +107,15 @@ arrayDeBotones.forEach(boton => {
     carrito.productos.push(productoElegido)
     limpiarCarrito()
     actualizarCarrito(carrito)
+    renovarStorage()
+  })
+})
+
+let arrayDeBtnEliminar = Array.from(eliminarProducto)
+arrayDeBtnEliminar.forEach(eliminar => {
+  eliminar.addEventListener("click", (e) => {
+    let productoElegido = catalogo.find(producto => producto.id == e.target.id)
+    productoElegido.remove()
   })
 })
 

@@ -37,13 +37,32 @@
     </nav>
     <input type="checkbox" id="btnCarrito">
     <div class="containerCarrito">
-        <table id="listaCarrito" class="u-full-width">
-            <tbody>
-                <!-- aca se van a ir sumando los productos de mi carrito con el innerHTML -->
-            </tbody>
-        </table>
-        
-        <a href="#" class="btn btn-light" id="vaciarCarrito">Vaciar Carrito</a>
+        <div class="shoppingItems shoppingCartItemsContainer">
+
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="shopping-cart-total d-flex align-items-center">
+                    <p class="mb-0">Total</p>
+                    <p class="ml-4 mb-0 shoppingCartTotal">$0</p>
+                    <div class="toast ml-auto bg-info" role="alert" aria-live="assertive" aria-atomic="true"
+                        data-delay="2000">
+                        <div class="toast-header">
+                            <span>✅</span>
+                            <strong class="mr-auto ml-1 text-secondary">Elemento en el carrito</strong>
+                            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="toast-body text-white">
+                            Se aumentó correctamente la cantidad
+                        </div>
+                    </div>
+                    <button class="btn btn-success ml-auto comprarButton" type="button" data-toggle="modal"
+                        data-target="#comprarModal">Comprar</button>
+                </div>
+            </div>
+        </div>
     </div>
     <main>
         <!-- cards -->
@@ -86,7 +105,7 @@
             <div class="cardContenedor mt-5 mb-5" id="listaProductos">
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/almohadones.jpeg" alt="">
+                        <img src="./img/almohadones.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -99,16 +118,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Almohadones Varios</h4>
+                            <h4 class="title">Almohadones Varios</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$5.600</h3>
+                            <h3 class="price">$5600</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/cuadros2.jpeg" alt="">
+                        <img src="./img/cuadros2.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -121,16 +140,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Set Cuadros</h4>
+                            <h4 class="title">Set Cuadros</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$3.500</h3>
+                            <h3 class="price">$3500</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/pieDeCama2.jpeg" alt="">
+                        <img src="./img/pieDeCama2.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -143,16 +162,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Pie De Cama</h4>
+                            <h4 class="title">Pie De Cama</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$4.490</h3>
+                            <h3 class="price">$4490</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/velas12.jpeg" alt="">
+                        <img src="./img/velas12.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -165,16 +184,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Short Ribbed Tower</h4>
+                            <h4 class="title">Short Ribbed Tower</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$1.000</h3>
+                            <h3 class="price">$1000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/cuadro3.jpeg" alt="">
+                        <img src="./img/cuadro3.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -187,16 +206,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Cuadro</h4>
+                            <h4 class="title">Cuadro</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$6.000</h3>
+                            <h3 class="price">$6000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/velas13.jpeg" alt="">
+                        <img src="./img/velas13.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -209,16 +228,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Mixed Set</h4>
+                            <h4 class="title">Mixed Set</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$6.550</h3>
+                            <h3 class="price">$6550</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/cuadros4.jpeg" alt="">
+                        <img src="./img/cuadros4.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -231,16 +250,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Mesa de Madera</h4>
+                            <h4 class="title">Mesa de Madera</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$18.000</h3>
+                            <h3 class="price">$18000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/cuadros12.jpeg" alt="">
+                        <img src="./img/cuadros12.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -253,16 +272,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Set Cuadros Varios</h4>
+                            <h4 class="title">Set Cuadros Varios</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$15.500</h3>
+                            <h3 class="price">$15500</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/velas19.jpeg" alt="">
+                        <img src="./img/velas19.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -275,16 +294,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Geo Lady</h4>
+                            <h4 class="title">Geo Lady</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$1.500</h3>
+                            <h3 class="price">$1500</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/alfombra2.jpeg" alt="">
+                        <img src="./img/alfombra2.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -297,16 +316,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Alfombra</h4>
+                            <h4 class="title">Alfombra</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$18.000</h3>
+                            <h3 class="price">$18000</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/bauleraAmarilla.jpeg" alt="">
+                        <img src="./img/bauleraAmarilla.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -319,16 +338,16 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Baulera Amarilla</h4>
+                            <h4 class="title">Baulera Amarilla</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$15.550</h3>
+                            <h3 class="price">$15550</h3>
                         </div>
                     </div>
                 </div>
                 <div class="card">
                     <div class="cardImgBx">
-                        <img src="./img/cuadros11.jpeg" alt="">
+                        <img src="./img/cuadros11.jpeg" class="itemImg" alt="">
                         <ul class="action">
                             <li class="actionBox">
                                 <i class="fa fa-heart" aria-hidden="true"></i>
@@ -341,10 +360,10 @@
                     </div>
                     <div class="cardContenido">
                         <div class="nombreProducto text-center">
-                            <h4>Set Cuadros Varios</h4>
+                            <h4 class="title">Set Cuadros Varios</h4>
                         </div>
                         <div class="precioProducto text-center">
-                            <h3>$12.500</h3>
+                            <h3 class="price">$12500</h3>
                         </div>
                     </div>
                 </div>
@@ -404,6 +423,7 @@
         </div>
     </footer>
 
+    
     <script src="./js/app.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
